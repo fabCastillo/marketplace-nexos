@@ -1,0 +1,50 @@
+.container-search {
+    position: relative;
+}
+.input-search {
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 10px;
+    width: 51%;
+    outline: none;
+}
+
+.suggestions-container {
+    background-color: white;
+    border: 1px solid;
+    border-top: 0px;
+    padding: 10px;
+    position: absolute;
+    top: 24px;
+    width: 51%;
+}
+
+.suggestions-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.suggestions-list li {
+    cursor: pointer;
+    padding: 5px 0;
+}
+
+.suggestions-list li:hover {
+    background-color: #ddd;
+}
+
+.button-search, .button-remove  {
+    background-color: white;
+    border: 0px;
+    border-left: 1px solid #e6e6e6;
+    height: 27px;
+    left: 47%;
+    position: absolute;
+    top: 4px;
+    width: 5%;
+    cursor: pointer;
+}
+.button-remove {
+    border-left: 0px;
+    color: red;
+}
