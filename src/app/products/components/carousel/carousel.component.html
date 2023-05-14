@@ -1,0 +1,28 @@
+<div class="carousel" [ngStyle]="{'min-height': finalHeight}">
+    
+    <div class="carousel__btns">
+        <i class="material-symbols-outlined" (click)="setBack()">arrow_back_ios</i>
+        <i class="material-symbols-outlined" (click)="setNext()">arrow_forward_ios</i>
+    </div>
+
+    <div class="carousel__content">
+        <ng-container *ngFor="let section of items.slice(0,5)">
+            <div 
+                class="carousel__content-item" 
+                [ngStyle]="{'background-image':'url('+ section.images[0] +')', 'margin-left': section.marginLeft + '%'}">
+                <h1>{{section.category.name}} <span> {{section.title}} </span> </h1>
+                <p>{{section.description}}</p>
+            </div>
+        </ng-container>
+    </div>
+
+    <div class="carousel__steps">
+        <div 
+            class="carousel__steps-step 
+            carousel__steps-step-{{currentPosition === item.id ? 'active':''}}" 
+            *ngFor="let item of items.slice(0,5)" 
+            (click)="setCurrentPosition(item.id)">
+        </div>
+    </div>
+
+</div>

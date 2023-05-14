@@ -4,10 +4,10 @@
         placeholder="Buscar productos, marcas y más..."
         class="input-search"
         [(ngModel)]="searchTerm"
-        (input)="searching()">
-    <div class="suggestions-container" *ngIf="suggestions.length > 0 && searchTerm">
+        (input)="filterSuggestionsBySearchTerm()">
+    <div class="suggestions-container" *ngIf="filterSuggestions.length > 0 && searchTerm">
         <ul class="suggestions-list">
-            <li *ngFor="let suggestion of suggestions.slice(0, 10)" (click)="selectSuggestion(suggestion)">{{suggestion.title}}</li>
+            <li *ngFor="let suggestion of filterSuggestions.slice(0, 10)" (click)="selectSuggestion(suggestion)">{{suggestion.title}}</li>
         </ul>
     </div>
     <button 

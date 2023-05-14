@@ -7,6 +7,8 @@ export interface Product {
     creationAt:  Date;
     updatedAt:   Date;
     category:    Category;
+    order?:      number;
+    marginLeft: number;
 }
 
 export interface Category {

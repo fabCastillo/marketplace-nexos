@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { Product } from '../interfaces/product.interface';
 
 @Injectable({
@@ -11,12 +11,16 @@ export class ProductsService {
 
   constructor(private http: HttpClient){}
 
-  getSuggestions( termino: string ): Observable<Product[]> {
+  getSuggestionsByTitle( termino: string ): Observable<Product[]> {
     return this.http.get<Product[]>(`${this.baseUrl}/?title=${termino}`);
   }
 
-  getProductId( id: number ): Observable<Product> {
+  getProductById( id: number ): Observable<Product> {
     return this.http.get<Product>(`${this.baseUrl}/${id}`);
+  }
+
+  getProductsMinimalPrice(): Observable<Product[]> {
+    return this.http.get<Product[]>(`${this.baseUrl}/?price_max=900&offset=0&limit=5`);
   }
 
 }
