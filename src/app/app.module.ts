@@ -1,22 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { SearchComponent } from './products/components/search/search.component';
-import { CarouselComponent } from './products/components/carousel/carousel.component';
+
+import { AppRoutingModule } from './routes/app-routing.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    SearchComponent,
-    CarouselComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
