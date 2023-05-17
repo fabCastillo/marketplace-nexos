@@ -32,7 +32,7 @@ export class SearchComponent {
     return title.toLocaleLowerCase();
   }
 
-  public selectSuggestion(suggestion: Product):void {    
+  public selectSuggestion(suggestion: Product):void {
     this.filterSuggestions = [];
     this.searchTerm = suggestion.title;
     this.productsService.getProductById(suggestion.id).subscribe( product => console.log(product) )

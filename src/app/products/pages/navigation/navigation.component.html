@@ -1,9 +1,41 @@
-<div class="navigation">
-    <div class="navigation__bank">
-        <h1 class="navigation__bank-item">Bank Ink</h1>
+<header class="container">
+    <div class="container__title">
+        <h1>Bank Ink</h1>
     </div>
-    <div class="navigation__search">
+    
+    <div class="container__search">
         <app-search></app-search>
     </div>
-    <div class="">cart</div>
-</div>
+
+    <button class="open-menu" (click)="showNavBar()">
+        <span class="material-symbols-outlined">
+            menu
+        </span>
+    </button>
+
+    <nav class="container__nav" [ngClass]="{'visible': navBarOpen}">
+        <button class="close-menu" (click)="showNavBar()">
+            <span class="material-symbols-outlined">
+                close
+            </span>
+        </button>
+        <ul class="container__nav-list">
+            <li><a href="#">
+                <span class="material-symbols-outlined">
+                    person
+                </span>
+            </a></li>
+            <li><a href="#">
+                <span class="material-symbols-outlined">
+                    help
+                </span>
+            </a></li>
+            <li><a href="#">
+                <span class="material-symbols-outlined">
+                    shopping_cart
+                </span>
+            </a></li>
+        </ul>
+    </nav>
+    
+</header>

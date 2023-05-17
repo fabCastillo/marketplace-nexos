@@ -7,6 +7,7 @@ import { SearchComponent } from '../products/components/search/search.component'
 import { CarouselComponent } from '../products/components/carousel/carousel.component';
 import { ProductsRoutingModule } from './products-routing.module';
 import { NavigationComponent } from './pages/navigation/navigation.component';
+import { CardComponent } from './components/card/card.component';
 
 
 
@@ -15,7 +16,8 @@ import { NavigationComponent } from './pages/navigation/navigation.component';
     SkeletonComponent,
     SearchComponent,
     CarouselComponent,
-    NavigationComponent
+    NavigationComponent,
+    CardComponent
   ],
   imports: [
     CommonModule,

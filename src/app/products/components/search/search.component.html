@@ -1,4 +1,4 @@
-<div class="container-search">
+<!-- <div class="container-search">
     <input 
         type="text"
         placeholder="Buscar productos, marcas y más..."
@@ -30,4 +30,42 @@
         </button>
     </ng-template>
     
+</div> -->
+
+<div class="container">
+    <div class="container__search-input">
+        <input 
+            type="text"
+            placeholder="Buscar..."
+            class="container__input-search"
+            [(ngModel)]="searchTerm"
+            (input)="filterSuggestionsBySearchTerm()"
+        />
+        <ul class="container__suggestions" *ngIf="filterSuggestions.length > 0 && searchTerm">
+            <li 
+                class="container__suggestions-item" 
+                *ngFor="let suggestion of filterSuggestions.slice(0, 10)" 
+                (click)="selectSuggestion(suggestion)"
+            >{{suggestion.title}}</li>
+        </ul>
+        <button 
+            class="container__button-search"
+            *ngIf="!searchTerm; else SearchTerm">
+            <span 
+                class="material-symbols-outlined icon">
+                search
+            </span>
+        </button>
+        <ng-template #SearchTerm>
+            <button 
+                class="container__button-remove"
+                (click)="clearSearchTerm()">
+                <span 
+                    class="material-symbols-outlined">
+                    cancel
+                </span>
+            </button>
+        </ng-template>
+        
+    </div>
 </div>
