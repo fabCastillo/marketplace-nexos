@@ -8,6 +8,7 @@ import { CarouselComponent } from '../products/components/carousel/carousel.comp
 import { ProductsRoutingModule } from './products-routing.module';
 import { NavigationComponent } from './pages/navigation/navigation.component';
 import { CardComponent } from './components/card/card.component';
+import { MenuComponent } from './pages/menu/menu.component';
 
 
 
@@ -17,7 +18,8 @@ import { CardComponent } from './components/card/card.component';
     SearchComponent,
     CarouselComponent,
     NavigationComponent,
-    CardComponent
+    CardComponent,
+    MenuComponent
   ],
   imports: [
     CommonModule,
